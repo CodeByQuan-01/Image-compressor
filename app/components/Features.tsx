@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Wand2, Layers, Cpu, Zap, Image as ImageIcon } from 'lucide-react';
 import GlassCard from './GlassCard';
@@ -76,7 +77,14 @@ const Features: React.FC = () => {
                       </ul>
                     </div>
                     <div className="flex-1 relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
-                      <img src="https://picsum.photos/seed/magic/800/600" alt="Magic Compression" className="w-full h-auto" />
+                      <Image 
+                        src="https://picsum.photos/seed/magic/800/600" 
+                        alt="Magic Compression" 
+                        width={800}
+                        height={600}
+                        className="w-full h-auto"
+                        unoptimized
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-6">
                         <div className="text-white">
                            <div className="text-sm font-mono opacity-80">Reduced by 75%</div>
@@ -99,7 +107,14 @@ const Features: React.FC = () => {
                   <GlassCard className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                      <div className="relative group">
                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                       <img src="https://picsum.photos/seed/quality/800/600" className="rounded-2xl shadow-lg relative z-10" alt="High Quality" />
+                       <Image 
+                        src="https://picsum.photos/seed/quality/800/600" 
+                        alt="High Quality"
+                        width={800}
+                        height={600}
+                        className="rounded-2xl shadow-lg relative z-10"
+                        unoptimized
+                       />
                      </div>
                      <div className="space-y-6">
                         <h3 className="font-display text-3xl font-bold">Pixel-Perfect Clarity</h3>

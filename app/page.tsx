@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useRef } from 'react';
+import React from 'react';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Compressor from './components/Compressor';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
-  const compressorRef = useRef<HTMLElement>(null);
 
   const scrollToCompressor = () => {
     const element = document.getElementById('compressor');
