@@ -14,14 +14,14 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="text-slate-500 text-sm flex items-center gap-1">
-          Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> by CodeByQuan
+          Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> by <a href="https://quancodes.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 transition-colors font-medium">CodeByQuan</a>
         </div>
 
         <div className="flex gap-6">
-          <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors">
+          <a href="https://github.com/CodeByQuan-01" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-indigo-600 transition-colors">
             <Github className="w-5 h-5" />
           </a>
-          <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors">
+          <a href="https://x.com/codebyquan" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-indigo-600 transition-colors">
             <XLogo className="w-5 h-5" />
           </a>
         </div>

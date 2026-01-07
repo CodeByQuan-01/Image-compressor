@@ -144,9 +144,17 @@ const Compressor: React.FC = () => {
       <div className="w-full max-w-6xl mx-auto z-10">
         <AnimatePresence mode="wait">
           {state === AppState.IDLE && (
-            <GlassCard key="idle" className="text-center p-16 border-2 border-dashed border-indigo-200 hover:border-indigo-400 transition-colors max-w-4xl mx-auto">
+            <GlassCard key="idle" className="relative p-16 border-2 border-dashed border-indigo-200/50 hover:border-indigo-400 transition-colors max-w-4xl mx-auto overflow-hidden group">
+              {/* Corner Accents */}
+              <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+                 <div className="absolute top-6 left-6 w-8 h-8 border-t-2 border-l-2 border-indigo-500 rounded-tl-lg transition-all group-hover:w-10 group-hover:h-10" />
+                 <div className="absolute top-6 right-6 w-8 h-8 border-t-2 border-r-2 border-indigo-500 rounded-tr-lg transition-all group-hover:w-10 group-hover:h-10" />
+                 <div className="absolute bottom-6 left-6 w-8 h-8 border-b-2 border-l-2 border-indigo-500 rounded-bl-lg transition-all group-hover:w-10 group-hover:h-10" />
+                 <div className="absolute bottom-6 right-6 w-8 h-8 border-b-2 border-r-2 border-indigo-500 rounded-br-lg transition-all group-hover:w-10 group-hover:h-10" />
+              </div>
+
               <div
-                className="flex flex-col items-center justify-center cursor-pointer min-h-[300px]"
+                className="flex flex-col items-center justify-center cursor-pointer min-h-[300px] relative z-10"
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}
