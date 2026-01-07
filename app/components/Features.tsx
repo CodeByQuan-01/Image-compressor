@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Wand2, Layers, Cpu, Zap, Image as ImageIcon } from 'lucide-react';
+import { Wand2, Layers, Cpu, Zap, Image as ImageIcon, Globe, Lock, Timer, Cloud } from 'lucide-react';
 import GlassCard from './GlassCard';
 
 const Features: React.FC = () => {
@@ -167,24 +167,102 @@ const Features: React.FC = () => {
                   transition={{ duration: 0.3 }}
                   className="w-full"
                 >
-                  <GlassCard className="flex flex-col md:flex-row items-center gap-12">
-                     <div className="flex-1 space-y-6">
-                        <div className="inline-flex items-center gap-2 text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full text-sm font-bold">
-                           <Cpu className="w-4 h-4" /> WebAssembly Powered
+                  <GlassCard className="p-8 md:p-12">
+                     <div className="flex flex-col lg:flex-row items-center gap-12">
+                        <div className="flex-1 space-y-8">
+                           <div className="space-y-4">
+                              <div className="inline-flex items-center gap-2 text-indigo-600 bg-indigo-50 px-4 py-1.5 rounded-full text-sm font-bold border border-indigo-100">
+                                 <Cpu className="w-4 h-4" /> WebAssembly Powered
+                              </div>
+                              <h3 className="font-display text-3xl md:text-4xl font-bold text-slate-900">
+                                 Local Processing Speed
+                              </h3>
+                              <p className="text-slate-600 text-lg leading-relaxed">
+                                 Your images never leave your browser. We utilize modern Web Workers and WASM to compress images instantly on your device, ensuring maximum privacy and zero latency.
+                              </p>
+                           </div>
+                           
+                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                              <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-start gap-4">
+                                 <div className="bg-white p-2.5 rounded-lg shadow-sm text-indigo-600">
+                                    <Lock className="w-5 h-5" />
+                                 </div>
+                                 <div>
+                                    <h4 className="font-bold text-slate-900">100% Private</h4>
+                                    <p className="text-sm text-slate-500 mt-1">Files are processed locally</p>
+                                 </div>
+                              </div>
+                              <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-start gap-4">
+                                 <div className="bg-white p-2.5 rounded-lg shadow-sm text-indigo-600">
+                                    <Globe className="w-5 h-5" />
+                                 </div>
+                                 <div>
+                                    <h4 className="font-bold text-slate-900">Offline Capable</h4>
+                                    <p className="text-sm text-slate-500 mt-1">Works without internet</p>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
-                        <h3 className="font-display text-3xl font-bold">Local Processing Speed</h3>
-                        <p className="text-slate-600 text-lg">
-                           Your images never leave your browser. We utilize modern Web Workers and WASM to compress images instantly on your device, ensuring maximum privacy and zero latency.
-                        </p>
-                     </div>
-                     <div className="flex-1 grid grid-cols-2 gap-4">
-                        <div className="bg-slate-900 text-white p-6 rounded-2xl">
-                           <div className="text-3xl font-bold text-green-400 mb-1">0.4s</div>
-                           <div className="text-sm text-slate-400">Average Time</div>
-                        </div>
-                        <div className="bg-white border border-slate-200 p-6 rounded-2xl">
-                           <div className="text-3xl font-bold text-slate-900 mb-1">0ms</div>
-                           <div className="text-sm text-slate-500">Upload Time</div>
+
+                        <div className="flex-1 w-full max-w-lg">
+                           <div className="bg-slate-900 rounded-2xl p-6 md:p-8 text-white shadow-xl relative overflow-hidden">
+                              <div className="absolute top-0 right-0 p-32 bg-indigo-500 rounded-full blur-[100px] opacity-20 pointer-events-none"></div>
+                              
+                              <div className="space-y-6 relative z-10">
+                                 <div className="flex items-center justify-between border-b border-white/10 pb-6">
+                                    <div className="space-y-1">
+                                       <div className="text-slate-400 text-sm font-medium">Processing Time</div>
+                                       <div className="text-4xl font-bold text-green-400 font-mono">~0.4s</div>
+                                    </div>
+                                    <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center">
+                                       <Timer className="w-6 h-6 text-green-400" />
+                                    </div>
+                                 </div>
+
+                                 <div className="space-y-4">
+                                    <div className="space-y-2">
+                                       <div className="flex justify-between text-sm">
+                                          <span className="text-white font-medium">Local Processing</span>
+                                          <span className="text-green-400">Instant</span>
+                                       </div>
+                                       <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                                          <motion.div 
+                                             initial={{ width: 0 }}
+                                             animate={{ width: "95%" }}
+                                             transition={{ duration: 1, delay: 0.2 }}
+                                             className="h-full bg-green-500 rounded-full"
+                                          />
+                                       </div>
+                                    </div>
+
+                                    <div className="space-y-2 opacity-50">
+                                       <div className="flex justify-between text-sm">
+                                          <span className="text-slate-300">Traditional Upload</span>
+                                          <span className="text-slate-400">Slow</span>
+                                       </div>
+                                       <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                                          <motion.div 
+                                             initial={{ width: 0 }}
+                                             animate={{ width: "30%" }}
+                                             transition={{ duration: 1.5, delay: 0.4 }}
+                                             className="h-full bg-slate-500 rounded-full"
+                                          />
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <div className="pt-6 grid grid-cols-2 gap-4">
+                                    <div className="bg-white/5 rounded-lg p-3 text-center">
+                                       <div className="text-2xl font-bold mb-1">0ms</div>
+                                       <div className="text-xs text-slate-400">Upload Latency</div>
+                                    </div>
+                                    <div className="bg-white/5 rounded-lg p-3 text-center">
+                                       <div className="text-2xl font-bold mb-1">∞</div>
+                                       <div className="text-xs text-slate-400">Files / Minute</div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
                      </div>
                   </GlassCard>
