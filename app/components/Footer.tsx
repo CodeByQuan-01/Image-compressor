@@ -1,5 +1,6 @@
 import React from 'react';
-import { Github, Twitter, Heart } from 'lucide-react';
+import { Github, Heart } from 'lucide-react';
+import { XLogo } from '@phosphor-icons/react';
 
 const Footer: React.FC = () => {
   return (
@@ -21,7 +22,7 @@ const Footer: React.FC = () => {
             <Github className="w-5 h-5" />
           </a>
           <a href="#" className="text-slate-400 hover:text-indigo-600 transition-colors">
-            <Twitter className="w-5 h-5" />
+            <XLogo className="w-5 h-5" />
           </a>
         </div>
       </div>

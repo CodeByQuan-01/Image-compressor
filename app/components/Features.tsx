@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Wand2, Layers, Cpu, Zap, Image as ImageIcon, Globe, Lock, Timer, Cloud } from 'lucide-react';
+import { Wand2, Layers, Cpu, Zap, Image as ImageIcon, Globe, Lock, Timer } from 'lucide-react';
 import GlassCard from './GlassCard';
 
 const Features: React.FC = () => {
