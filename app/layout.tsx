@@ -30,8 +30,9 @@ export default function RootLayout({
       >
         <Script
           defer
-          src="https://cloud.umami.is/script.js"
+          src="/stats/script.js"
           data-website-id="08ea4b0c-e2a8-452c-8939-beb47b7e7f3b"
+          data-host-url="/stats"
           strategy="afterInteractive"
         />
         {children}
